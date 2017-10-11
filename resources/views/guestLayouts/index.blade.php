@@ -16,43 +16,9 @@
                 <h2><a href="/danh-sach/truyen-hot/" title="Truyện hot">Truyện hot</a></h2><a href="/danh-sach/truyen-hot/" title="Truyện hot"><span class="glyphicon glyphicon-fire"></span></a>
                 <select id="hot-select" class="form-control new-select">
                     <option value="all">Tất cả</option>
-                    <option value="1">Tiên Hiệp</option>
-                    <option value="2">Kiếm Hiệp</option>
-                    <option value="3">Ngôn Tình</option>
-                    <option value="4">Đô Thị</option>
-                    <option value="20">Quan Trường</option>
-                    <option value="6">Võng Du</option>
-                    <option value="5">Khoa Huyễn</option>
-                    <option value="8">Huyền Huyễn</option>
-                    <option value="7">Dị Giới</option>
-                    <option value="19">Dị Năng</option>
-                    <option value="10">Quân Sự</option>
-                    <option value="11">Lịch Sử</option>
-                    <option value="15">Xuyên Không</option>
-                    <option value="17">Trọng Sinh</option>
-                    <option value="18">Trinh Thám</option>
-                    <option value="16">Thám Hiểm</option>
-                    <option value="9">Linh Dị</option>
-                    <option value="12">Sắc</option>
-                    <option value="30">Ngược</option>
-                    <option value="36">Sủng</option>
-                    <option value="21">Cung Đấu</option>
-                    <option value="22">Nữ Cường</option>
-                    <option value="24">Gia Đấu</option>
-                    <option value="23">Đông Phương</option>
-                    <option value="13">Đam Mỹ</option>
-                    <option value="14">Bách Hợp</option>
-                    <option value="25">Hài Hước</option>
-                    <option value="27">Điền Văn</option>
-                    <option value="28">Cổ Đại</option>
-                    <option value="29">Mạt Thế</option>
-                    <option value="26">Truyện Teen</option>
-                    <option value="32">Tiểu Thuyết Phương Tây</option>
-                    <option value="33">Nữ Phụ</option>
-                    <option value="34">Light Novel</option>
-                    <option value="35">Văn học Việt Nam</option>
-                    <option value="37">Đoản Văn</option>
-                    <option value="31">Khác</option>
+                    @foreach($genders as $gender)
+                    <option value="{{$gender->id}}"></option>{{$gender->gender_name}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="index-intro">
