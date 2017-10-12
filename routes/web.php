@@ -1,5 +1,6 @@
 <?php
-
+Route::get('/search/ajax', 'SearchController@search');
+Route::get('ajax-subcat', 'SearchController@hotCategory');
 
 Route::resource('authors', 'AuthorController', ['except' => 'show']);
 Route::resource('genders', 'GenderController', ['except' => 'show']);
@@ -29,5 +30,6 @@ Route::get('{book_slug}/{chapter_slug}', 'ChapterController@show')->name('chapte
 
 
 Route::get('/', 'BookController@home')->name('home');
+
 
 
