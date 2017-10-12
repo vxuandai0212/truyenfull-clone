@@ -52,7 +52,7 @@
         </br>
 
         <label class="control-label">Source</label>
-        <input required type="text" class="form-control" name="source" value="{{ $book->source }}">
+        <input type="text" class="form-control" name="source" value="{{ $book->source }}">
 
         <label class="control-label">Category</label>
         <input type="text" class="form-control" name="category" value="{{ $book->category_description }}">
