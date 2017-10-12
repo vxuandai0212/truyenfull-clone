@@ -17,7 +17,7 @@
                 <select id="hot-select" class="form-control new-select">
                     <option value="all">Tất cả</option>
                     @foreach($genders as $gender)
-                    <option value="{{$gender->id}}"></option>{{$gender->gender_name}}</option>
+                    <option value="{{$gender->id}}">{{$gender->gender_name}}</option>
                     @endforeach
                 </select>
             </div>
@@ -27,7 +27,7 @@
             <div class="item top-1" itemscope itemtype="http://schema.org/Book">
                 <a href="{{$book->slug}}" itemprop="url">
                 <span class="full-label"></span>
-                <img src="/images/{{$book->image}}" dalt="{{$book->book_name}}" class="img-responsive item-img" itemprop="image">
+                <img src="/images/{{$book->image}}" alt="{{$book->book_name}}" class="img-responsive item-img" itemprop="image">
                 <div class="title">
                 <h3 itemprop="name">{{$book->book_name}}</h3>
                 </div>
@@ -36,7 +36,7 @@
             @else
             <div class="item top-2" itemscope itemtype="http://schema.org/Book">
                 <a href="{{$book->slug}}" itemprop="url">
-                <img src="/images/{{$book->image}}" dalt="{{$book->book_name}}" class="img-responsive item-img" itemprop="image">
+                <img src="/images/{{$book->image}}" alt="{{$book->book_name}}" class="img-responsive item-img" itemprop="image">
                 <div class="title">
                 <h3 itemprop="name">{{$book->book_name}}</h3>
                 </div>
@@ -50,47 +50,13 @@
             <div class="row text-center"></div>
             <div class="hide" id="history-holder"></div>
             <div class="list list-truyen list-new col-xs-12 col-sm-12 col-md-8 col-truyen-main">
-                <div class="title-list">
+                <div id="updated-list" class="title-list">
                     <h2><a href="/danh-sach/truyen-moi/" title="Truyện mới">Truyện mới cập nhật</a></h2><a href="/danh-sach/truyen-moi/" title="Truyện mới"><span class="glyphicon glyphicon-menu-right"></span></a>
                     <select id="new-select" class="form-control new-select">
                         <option value="all">Tất cả</option>
-                        <option value="1">Tiên Hiệp</option>
-                        <option value="2">Kiếm Hiệp</option>
-                        <option value="3">Ngôn Tình</option>
-                        <option value="4">Đô Thị</option>
-                        <option value="20">Quan Trường</option>
-                        <option value="6">Võng Du</option>
-                        <option value="5">Khoa Huyễn</option>
-                        <option value="8">Huyền Huyễn</option>
-                        <option value="7">Dị Giới</option>
-                        <option value="19">Dị Năng</option>
-                        <option value="10">Quân Sự</option>
-                        <option value="11">Lịch Sử</option>
-                        <option value="15">Xuyên Không</option>
-                        <option value="17">Trọng Sinh</option>
-                        <option value="18">Trinh Thám</option>
-                        <option value="16">Thám Hiểm</option>
-                        <option value="9">Linh Dị</option>
-                        <option value="12">Sắc</option>
-                        <option value="30">Ngược</option>
-                        <option value="36">Sủng</option>
-                        <option value="21">Cung Đấu</option>
-                        <option value="22">Nữ Cường</option>
-                        <option value="24">Gia Đấu</option>
-                        <option value="23">Đông Phương</option>
-                        <option value="13">Đam Mỹ</option>
-                        <option value="14">Bách Hợp</option>
-                        <option value="25">Hài Hước</option>
-                        <option value="27">Điền Văn</option>
-                        <option value="28">Cổ Đại</option>
-                        <option value="29">Mạt Thế</option>
-                        <option value="26">Truyện Teen</option>
-                        <option value="32">Tiểu Thuyết Phương Tây</option>
-                        <option value="33">Nữ Phụ</option>
-                        <option value="34">Light Novel</option>
-                        <option value="35">Văn học Việt Nam</option>
-                        <option value="37">Đoản Văn</option>
-                        <option value="31">Khác</option>
+                        @foreach($genders as $gender)
+                            <option value="{{$gender->id}}">{{$gender->gender_name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 @foreach($recentUpdateBooks as $book)

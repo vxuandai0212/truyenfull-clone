@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+
     
 </head>
 
@@ -59,13 +60,52 @@ $(document).ready(function(){
     $('#hot-select').on('change', function(e){
         console.log(e);
         var cat_id = e.target.value;
-        $.get('ajax-subcat?cat_id=' +cat_id, function(data){
-            $('#subcategory').empty();
+        $.get('ajax-subcathot?cat_id=' +cat_id, function(data){
+            $('.index-intro').empty();
             $.each(data, function(index, subcatObj){
-                $(#subcategory).append('<option value"'+subcatObj.id+'">'+subcatObj.name+'</option>');
+                $('.index-intro').append('<div class="item top-'+(index+1)+'" itemscope="" itemtype="http://schema.org/Book"><a href="'+subcatObj.slug+'" itemprop="url"><span class="full-label"></span><img src="/images/'+subcatObj.image+'" alt="'+subcatObj.book_name+'" class="img-responsive item-img" itemprop="image"><div class="title"><h3 itemprop="name">'+subcatObj.book_name+'</h3></div></a></div>');
             });
         });
     });
+
+    $('#new-select').on('change', function(e){
+        console.log(e);
+        var cat_id = e.target.value;
+        $.get('ajax-subcatnew?cat_id=' +cat_id, function(data){
+            $("#updated-list").nextAll().empty();
+            $.each(data, function(index, subcatObj){
+                $('#updated-list').append('<div class="row" itemscope="" itemtype="http://schema.org/Book"><div class="col-xs-9 col-sm-6 col-md-5 col-title"><span class="glyphicon glyphicon-chevron-right"></span> <h3 itemprop="name"><a href="'+subcatObj.slug+'" title="'+subcatObj.book_name+'" itemprop="url">'+subcatObj.book_name+'</a></h3><span class="label-title label-new"></span></div><div class="hidden-xs col-sm-3 col-md-3 col-cat text-888">'<a itemprop="genre" href="http://truyenfull.vn/the-loai/ngon-tinh/" title="Ngôn Tình">Ngôn Tình</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/khoa-huyen/" title="Khoa Huyễn">Khoa Huyễn</a></div><div class="col-xs-3 col-sm-3 col-md-2 col-chap text-info"><a href="http://truyenfull.vn/mau-xuyen-nu-phu-phan-cong-nam-than-moi-mac-cau/chuong-19/" title="Mau Xuyên Nữ Phụ Phản Công: Nam Thần Mời Mắc Câu - Chương 19"><span class="chapter-text"><span>Chương </span></span>19</a></div><div class="hidden-xs hidden-sm col-md-2 col-time text-888">12 phút trước </div></div>');
+            });
+        });
+    });
+
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+    // Dropdown Menu
+    var dropdown = document.querySelectorAll('.dropdown');
+    var dropdownArray = Array.prototype.slice.call(dropdown,0);
+    dropdownArray.forEach(function(el){
+        var button = el.querySelector('a[data-toggle="dropdown"]'),
+            menu = el.querySelector('.dropdown-menu');
+
+        button.onclick = function(event) {
+            if(!menu.hasClass('show')) {
+                menu.classList.add('show');
+                menu.classList.remove('hide');
+                event.preventDefault();
+            }
+            else {
+                menu.classList.remove('show');
+                menu.classList.add('hide');
+                event.preventDefault();
+            }
+        };
+    })
+
+    Element.prototype.hasClass = function(className) {
+        return this.className && new RegExp("(^|\\s)" + className + "(\\s|$)").test(this.className);
+    };
+
 </script> 
 </body>
 

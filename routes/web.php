@@ -1,6 +1,7 @@
 <?php
 Route::get('/search/ajax', 'SearchController@search');
-Route::get('ajax-subcat', 'SearchController@hotCategory');
+Route::get('ajax-subcathot', 'SearchController@hotCategory');
+Route::get('ajax-subcatnew', 'SearchController@newCategory');
 
 Route::resource('authors', 'AuthorController', ['except' => 'show']);
 Route::resource('genders', 'GenderController', ['except' => 'show']);
