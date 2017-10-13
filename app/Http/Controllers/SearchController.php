@@ -54,20 +54,24 @@ class SearchController extends Controller
     public function newCategory(Request $request)
     {
         $cat_id = $request->cat_id;
-        if($cat_id == "all")
-        {
+        if($cat_id == 'all'){
+            $books = Book::with('genders','chapters')
+                ->where('updated_at', '>=', Carbon::today())
+                ->take(-24)->get();
+        }
+        else{
             $books = Book::with(['genders', 'chapters'])
-                ->where('created_at', '>=', Carbon::today())
-                ->orWhere('updated_at', '>=', Carbon::today())->take(25)->get();
-        }else{
-            $books = Book::with(['genders', 'chapters'])->whereHas('genders', function($query) use ($cat_id){
-                $query->where('genders.id',$cat_id);
-            })
-                ->where('created_at', '>=', Carbon::today())
-                ->orWhere('updated_at', '>=', Carbon::today())->take(25)->get();
+                ->whereHas('genders', function($query) use ($cat_id){
+                    $query->where('genders.id','=', $cat_id);
+                })
+                ->where('updated_at', '>=', Carbon::today())
+                ->take(-24)->get();
         }
 
 
-        return Response::json($books);
+        $genders = Gender::all();
+
+
+        return view('guestLayouts.updatedList', compact('books','genders', 'cat_id'));
     }
 }
