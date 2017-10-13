@@ -148,6 +148,8 @@ class BookController extends Controller
         
         $i = 0;
         $j = 0;
+        $z = 0;
+        $k = 0;
 
 
         $author = Author::whereHas('books', function($query) use ($book) {
@@ -164,8 +166,14 @@ class BookController extends Controller
         ->select('chapters.id', 'chapters.chapter_number', 'chapters.chapter_name', 'chapters.slug')
         ->paginate(2);
 
+        $hotbooks = Book::with(['genders'])
+        ->orderBy('view_count','desc')
+        ->where('updated_at', '>=', Carbon::now()->format('M'))
+        ->take(10)
+        ->get();
+
         if($request->ajax() || 'NULL'){
-    	     return view('guestLayouts.book',compact('book', 'i', 'j', 'chapters', 'author', 'sameAuthorBooks'));
+    	     return view('guestLayouts.book',compact('book', 'i', 'j', 'chapters', 'author', 'sameAuthorBooks','hotbooks','z','k'));
         }
 
       
