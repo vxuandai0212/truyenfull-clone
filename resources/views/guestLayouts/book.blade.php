@@ -141,12 +141,15 @@
         </div>
         <div class="list list-truyen list-side col-xs-12">
             <div class="title-list">
-                <h4>Truyện đang hot</h4></div>
+                <h4>Truyện đang hot</h4>
+            </div>
             <div class="row top-nav" data-limit="10">
                 <div class="col-xs-4 active" data-type="day">Ngày</div>
                 <div class="col-xs-4" data-type="month">Tháng</div>
                 <div class="col-xs-4" data-type="all">All time</div>
             </div>
+        </div>
+        <div id="hotbook-list" class="list list-truyen list-side col-xs-12">
             @foreach($hotbooks as $book)
             <?php $z++ ?>
             <div class="row top-item" itemscope itemtype="http://schema.org/Book">
@@ -176,22 +179,34 @@
 @section('script')
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script>
-       $(document).on('click','.pagination a', function(e){
-           e.preventDefault();
-           var page = $(this).attr('href').split('page=')[1];
-           getPosts(page);
-       });
+    $(document).on('click','.pagination a', function(e){
+        e.preventDefault();
+            var page = $(this).attr('href').split('page=')[1];
+            getPosts(page);
+        });
  
-       function getPosts(page)
-       {
-           $.ajax({
-               type: "GET",
-               url: '?page='+ page
-           })
-           .done(function(data) {
-               $('body').html(data);
-           });
-       }
+        function getPosts(page)
+        {
+            $.ajax({
+                type: "GET",
+                url: '?page='+ page
+            })
+            .done(function(data) {
+                $('body').html(data);
+            });
+        }
+
+        $( function() {
+        $( "#tabs" ).tabs({
+            beforeLoad: function( event, ui ) {
+            ui.jqXHR.fail(function() {
+            ui.panel.html(
+                "Couldn't load this tab. We'll try to fix this as soon as possible. " +
+                "If this wouldn't be a demo." );
+            });
+        }
+        });
+        });
   </script>
 @endsection
 
