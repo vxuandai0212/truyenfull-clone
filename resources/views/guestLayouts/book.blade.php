@@ -143,10 +143,12 @@
             <div class="title-list">
                 <h4>Truyện đang hot</h4></div>
             <div class="row top-nav" data-limit="10">
-                <div class="col-xs-4 active" data-type="day">Ngày</div>
-                <div class="col-xs-4" data-type="month">Tháng</div>
-                <div class="col-xs-4" data-type="all">All time</div>
+                <div id="hotday" class="col-xs-4 active" data-type="day">Ngày</div>
+                <div id="hotmonth" class="col-xs-4" data-type="month">Tháng</div>
+                <div id="hotalltime" class="col-xs-4" data-type="all">All time</div>
             </div>
+        </div>
+        <div id="hotbook-list" class="list list-truyen list-side col-xs-12">
             @foreach($hotbooks as $book)
             <?php $z++ ?>
             <div class="row top-item" itemscope itemtype="http://schema.org/Book">
@@ -192,6 +194,44 @@
                $('body').html(data);
            });
        }
+
+       $(function() {
+
+    $('#hotday').click(function(e) {
+        $("#hotbook-list").fadeOut(100);
+		$("#hotbook-list").delay(100).fadeIn(100);
+		$('#hotmonth').removeClass('active');
+        $('#hotalltime').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+        $.get('ajax-hotlist?date=day', function(data){
+            $('#hotbook-list').html(data);
+        });
+	});
+    $('#hotmonth').click(function(e) {
+        $("#hotbook-list").fadeOut(100);
+		$("#hotbook-list").delay(100).fadeIn(100);
+		$('#hotday').removeClass('active');
+        $('#hotalltime').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+        $.get('ajax-hotlist?date=month', function(data){
+            $('#hotbook-list').html(data);
+        });
+	});
+    $('#hotalltime').click(function(e) {
+        $("#hotbook-list").fadeOut(100);
+		$("#hotbook-list").delay(100).fadeIn(100);
+		$('#hotmonth').removeClass('active');
+        $('#hotday').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+        $.get('ajax-hotlist?date=all', function(data){
+            $('#hotbook-list').html(data);
+        });
+	});
+
+});
   </script>
 @endsection
 

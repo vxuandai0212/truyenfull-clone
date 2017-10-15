@@ -74,4 +74,26 @@ class SearchController extends Controller
 
         return view('guestLayouts.updatedList', compact('books','genders', 'cat_id'));
     }
+
+    public function hotlist(Request $request)
+    {
+        $z = 0;
+        if($request->date == "day"){
+            $books = Book::with('genders')
+            ->orderBy('id', 'desc')
+            ->take(10)->get();
+        }
+        elseif($request->date == "month"){
+            $books = Book::with('genders')
+            ->orderBy('view_count','desc')
+            ->take(10)->get();
+        }else{
+            $books = Book::with('genders')
+            ->orderBy('view_count')
+            ->take(10)->get();
+        }
+
+        return view('guestLayouts.hotlist', compact('books','z'));
+
+    }
 }
