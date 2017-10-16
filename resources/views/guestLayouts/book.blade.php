@@ -177,7 +177,6 @@
 @endsection
 
 @section('script')
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script>
     $(document).on('click','.pagination a', function(e){
         e.preventDefault();
@@ -185,7 +184,7 @@
             getPosts(page);
         });
  
-<<<<<<< HEAD
+
         function getPosts(page)
         {
             $.ajax({
@@ -197,18 +196,6 @@
             });
         }
 
-        $( function() {
-        $( "#tabs" ).tabs({
-            beforeLoad: function( event, ui ) {
-            ui.jqXHR.fail(function() {
-            ui.panel.html(
-                "Couldn't load this tab. We'll try to fix this as soon as possible. " +
-                "If this wouldn't be a demo." );
-            });
-        }
-        });
-        });
-=======
        function getPosts(page)
        {
            $.ajax({
@@ -220,44 +207,8 @@
            });
        }
 
-       $(function() {
+       
 
-    $('#hotday').click(function(e) {
-        $("#hotbook-list").fadeOut(100);
-		$("#hotbook-list").delay(100).fadeIn(100);
-		$('#hotmonth').removeClass('active');
-        $('#hotalltime').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-        $.get('ajax-hotlist?date=day', function(data){
-            $('#hotbook-list').html(data);
-        });
-	});
-    $('#hotmonth').click(function(e) {
-        $("#hotbook-list").fadeOut(100);
-		$("#hotbook-list").delay(100).fadeIn(100);
-		$('#hotday').removeClass('active');
-        $('#hotalltime').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-        $.get('ajax-hotlist?date=month', function(data){
-            $('#hotbook-list').html(data);
-        });
-	});
-    $('#hotalltime').click(function(e) {
-        $("#hotbook-list").fadeOut(100);
-		$("#hotbook-list").delay(100).fadeIn(100);
-		$('#hotmonth').removeClass('active');
-        $('#hotday').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-        $.get('ajax-hotlist?date=all', function(data){
-            $('#hotbook-list').html(data);
-        });
-	});
-
-});
->>>>>>> 2ea8eff87006574e05bc7c5ecea0c87a33f8a5c3
   </script>
 @endsection
 

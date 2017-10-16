@@ -79,21 +79,21 @@ class SearchController extends Controller
     {
         $z = 0;
         if($request->date == "day"){
-            $books = Book::with('genders')
+            $hotbooks = Book::with('genders')
             ->orderBy('id', 'desc')
             ->take(10)->get();
         }
         elseif($request->date == "month"){
-            $books = Book::with('genders')
+            $hotbooks = Book::with('genders')
             ->orderBy('view_count','desc')
             ->take(10)->get();
         }else{
-            $books = Book::with('genders')
+            $hotbooks = Book::with('genders')
             ->orderBy('view_count')
             ->take(10)->get();
         }
 
-        return view('guestLayouts.hotlist', compact('books','z'));
+        return view('guestLayouts.hotlist', compact('hotbooks','z'));
 
     }
 }

@@ -69,95 +69,36 @@
                 </div>
                 <div class="ads-300-250"></div>
                 <div class="list list-truyen list-side col-xs-12">
-                    <div class="title-list">
-                        <h4>Truyện đang hot</h4></div>
-                    <div class="row top-nav" data-limit="10">
-                        <div class="col-xs-4 active" data-type="day">Ngày</div>
-                        <div class="col-xs-4" data-type="month">Tháng</div>
-                        <div class="col-xs-4" data-type="all">All time</div>
-                    </div>
-                    <div class="row top-item" itemscope itemtype="http://schema.org/Book">
-                        <div class="col-xs-12">
-                            <div class="top-num top-1">1</div>
-                            <div class="s-title">
-                                <h3 itemprop="name"><a href="http://truyenfull.vn/truyen-choc-tuc-vo-yeu-mua-mot-tang-mot/" title="Chọc Tức Vợ Yêu - Mua Một Tặng Một" itemprop="url">Chọc Tức Vợ Yêu - Mua Một Tặng Một</a></h3></div>
-                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/ngon-tinh/" title="Ngôn Tình">Ngôn Tình</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/hai-huoc/" title="Hài Hước">Hài Hước</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/sung/" title="Sủng">Sủng</a></div>
-                        </div>
-                    </div>
-                    <div class="row top-item" itemscope itemtype="http://schema.org/Book">
-                        <div class="col-xs-12">
-                            <div class="top-num top-2">2</div>
-                            <div class="s-title">
-                                <h3 itemprop="name"><a href="http://truyenfull.vn/linh-vu-thien-ha/" title="Linh Vũ Thiên Hạ" itemprop="url">Linh Vũ Thiên Hạ</a></h3></div>
-                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/tien-hiep/" title="Tiên Hiệp">Tiên Hiệp</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/di-gioi/" title="Dị Giới">Dị Giới</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Huyền Huyễn">Huyền Huyễn</a></div>
-                        </div>
-                    </div>
-                    <div class="row top-item" itemscope itemtype="http://schema.org/Book">
-                        <div class="col-xs-12">
-                            <div class="top-num top-3">3</div>
-                            <div class="s-title">
-                                <h3 itemprop="name"><a href="http://truyenfull.vn/van-co-chi-ton/" title="Vạn Cổ Chí Tôn" itemprop="url">Vạn Cổ Chí Tôn</a></h3></div>
-                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Huyền Huyễn">Huyền Huyễn</a></div>
-                        </div>
-                    </div>
-                    <div class="row top-item" itemscope itemtype="http://schema.org/Book">
-                        <div class="col-xs-12">
-                            <div class="top-num top-4">4</div>
-                            <div class="s-title">
-                                <h3 itemprop="name"><a href="http://truyenfull.vn/hon-sai-55-lan/" title="Hôn Sai 55 Lần" itemprop="url">Hôn Sai 55 Lần</a></h3></div>
-                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/ngon-tinh/" title="Ngôn Tình">Ngôn Tình</a></div>
-                        </div>
-                    </div>
-                    <div class="row top-item" itemscope itemtype="http://schema.org/Book">
-                        <div class="col-xs-12">
-                            <div class="top-num top-5">5</div>
-                            <div class="s-title">
-                                <h3 itemprop="name"><a href="http://truyenfull.vn/truyen-than-khong-thien-ha/" title="Thần Khống Thiên Hạ" itemprop="url">Thần Khống Thiên Hạ</a></h3></div>
-                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/tien-hiep/" title="Tiên Hiệp">Tiên Hiệp</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/di-gioi/" title="Dị Giới">Dị Giới</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Huyền Huyễn">Huyền Huyễn</a></div>
-                        </div>
-                    </div>
-                    <div class="row top-item" itemscope itemtype="http://schema.org/Book">
-                        <div class="col-xs-12">
-                            <div class="top-num top-6">6</div>
-                            <div class="s-title">
-                                <h3 itemprop="name"><a href="http://truyenfull.vn/boss-hung-du-ong-xa-ket-hon-di/" title="Boss Hung Dữ - Ông Xã Kết Hôn Đi" itemprop="url">Boss Hung Dữ - Ông Xã Kết Hôn Đi</a></h3></div>
-                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/ngon-tinh/" title="Ngôn Tình">Ngôn Tình</a></div>
-                        </div>
-                    </div>
-                    <div class="row top-item" itemscope itemtype="http://schema.org/Book">
-                        <div class="col-xs-12">
-                            <div class="top-num top-7">7</div>
-                            <div class="s-title">
-                                <h3 itemprop="name"><a href="http://truyenfull.vn/dai-chua-te/" title="Đại Chúa Tể" itemprop="url">Đại Chúa Tể</a></h3></div>
-                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/tien-hiep/" title="Tiên Hiệp">Tiên Hiệp</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/di-gioi/" title="Dị Giới">Dị Giới</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Huyền Huyễn">Huyền Huyễn</a></div>
-                        </div>
-                    </div>
-                    <div class="row top-item" itemscope itemtype="http://schema.org/Book">
-                        <div class="col-xs-12">
-                            <div class="top-num top-8">8</div>
-                            <div class="s-title">
-                                <h3 itemprop="name"><a href="http://truyenfull.vn/de-ba/" title="Đế Bá" itemprop="url">Đế Bá</a></h3></div>
-                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Huyền Huyễn">Huyền Huyễn</a></div>
-                        </div>
-                    </div>
-                    <div class="row top-item" itemscope itemtype="http://schema.org/Book">
-                        <div class="col-xs-12">
-                            <div class="top-num top-9">9</div>
-                            <div class="s-title">
-                                <h3 itemprop="name"><a href="http://truyenfull.vn/pham-nhan-tu-tien/" title="Phàm Nhân Tu Tiên" itemprop="url">Phàm Nhân Tu Tiên</a></h3></div>
-                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/tien-hiep/" title="Tiên Hiệp">Tiên Hiệp</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/kiem-hiep/" title="Kiếm Hiệp">Kiếm Hiệp</a></div>
-                        </div>
-                    </div>
-                    <div class="row top-item" itemscope itemtype="http://schema.org/Book">
-                        <div class="col-xs-12">
-                            <div class="top-num top-10">10</div>
-                            <div class="s-title">
-                                <h3 itemprop="name"><a href="http://truyenfull.vn/dau-pha-thuong-khung/" title="Đấu Phá Thương Khung" itemprop="url">Đấu Phá Thương Khung</a></h3></div>
-                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/tien-hiep/" title="Tiên Hiệp">Tiên Hiệp</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/di-gioi/" title="Dị Giới">Dị Giới</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Huyền Huyễn">Huyền Huyễn</a></div>
-                        </div>
+            <div class="title-list">
+                <h4>Truyện đang hot</h4>
+            </div>
+            <div class="row top-nav" data-limit="10">
+                <div id="hotday" class="col-xs-4 active" data-type="day">Ngày</div>
+                <div id="hotmonth" class="col-xs-4" data-type="month">Tháng</div>
+                <div id="hotalltime" class="col-xs-4" data-type="all">All time</div>
+            </div>
+        </div>
+        <div id="hotbook-list" class="list list-truyen list-side col-xs-12">
+            @foreach($hotbooks as $book)
+            <?php $z++ ?>
+            <div class="row top-item" itemscope itemtype="http://schema.org/Book">
+                <div class="col-xs-12">
+                    <div class="top-num top-{{$z}}">{{$z}}</div>
+                    <div class="s-title">
+                        <h3 itemprop="name"><a href="{{route('book', ['book_slug' => $book->slug])}}" title="{{$book->book_name}}" itemprop="url">{{$book->book_name}}</a></h3></div>
+                    <div>
+                    @foreach($book->genders as $gender)
+                        @if($loop->last)                             
+                        <a itemprop="genre" href="/the-loai/{{$gender->slug}}/" title="{{$gender->gender_name}}">{{$gender->gender_name}}</a>
+                        @else
+                        <a itemprop="genre" href="/the-loai/{{$gender->slug}}/" title="{{$gender->gender_name}}">{{$gender->gender_name}}</a>,
+                        @endif
+                    @endforeach
                     </div>
                 </div>
-                <div class="ads-300-600"></div>
+            </div>
+            @endforeach
+        </div>
             </div>
         </div>
 @endsection

@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"> 
     @include('guestLayouts.css')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
     <style>
@@ -109,6 +111,45 @@ toggle between hiding and showing the dropdown content */
     Element.prototype.hasClass = function(className) {
         return this.className && new RegExp("(^|\\s)" + className + "(\\s|$)").test(this.className);
     };
+
+
+    $(function() {
+
+    $('#hotday').click(function(e) {
+        $("#hotbook-list").fadeOut(100);
+		$("#hotbook-list").delay(100).fadeIn(100);
+		$('#hotmonth').removeClass('active');
+        $('#hotalltime').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+        $.get('ajax-hotlist?date=day', function(data){
+            $('#hotbook-list').html(data);
+        });
+	});
+    $('#hotmonth').click(function(e) {
+        $("#hotbook-list").fadeOut(100);
+		$("#hotbook-list").delay(100).fadeIn(100);
+		$('#hotday').removeClass('active');
+        $('#hotalltime').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+        $.get('ajax-hotlist?date=month', function(data){
+            $('#hotbook-list').html(data);
+        });
+	});
+    $('#hotalltime').click(function(e) {
+        $("#hotbook-list").fadeOut(100);
+		$("#hotbook-list").delay(100).fadeIn(100);
+		$('#hotmonth').removeClass('active');
+        $('#hotday').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+        $.get('ajax-hotlist?date=all', function(data){
+            $('#hotbook-list').html(data);
+        });
+	});
+
+});
 
 </script> 
 </body>

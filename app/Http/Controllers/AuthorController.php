@@ -7,6 +7,7 @@ use App\Author;
 use App\Chapter;
 use App\Book;
 use App\Gender;
+use Carbon\Carbon;
 use Redirect;
 
 class AuthorController extends Controller
@@ -73,7 +74,15 @@ class AuthorController extends Controller
 
         $genders = Gender::all();
 
-        return view('guestLayouts.author', compact('author', 'books', 'genders'));
+        $hotbooks = Book::with(['genders'])
+        ->orderBy('view_count','desc')
+        ->where('updated_at', '>=', Carbon::now()->format('M'))
+        ->take(10)
+        ->get();
+
+        $z = 0;
+
+        return view('guestLayouts.author', compact('author', 'books', 'genders', 'hotbooks', 'z'));
     }
 
     /**
