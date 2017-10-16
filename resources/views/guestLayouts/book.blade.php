@@ -144,9 +144,9 @@
                 <h4>Truyện đang hot</h4>
             </div>
             <div class="row top-nav" data-limit="10">
-                <div id="hotday" class="col-xs-4 active" data-type="day">Ngày</div>
-                <div id="hotmonth" class="col-xs-4" data-type="month">Tháng</div>
-                <div id="hotalltime" class="col-xs-4" data-type="all">All time</div>
+                <div class="col-xs-4 active" data-type="day">Ngày</div>
+                <div class="col-xs-4" data-type="month">Tháng</div>
+                <div class="col-xs-4" data-type="all">All time</div>
             </div>
         </div>
         <div id="hotbook-list" class="list list-truyen list-side col-xs-12">
@@ -185,7 +185,6 @@
             getPosts(page);
         });
  
-<<<<<<< HEAD
         function getPosts(page)
         {
             $.ajax({
@@ -208,56 +207,6 @@
         }
         });
         });
-=======
-       function getPosts(page)
-       {
-           $.ajax({
-               type: "GET",
-               url: '?page='+ page
-           })
-           .done(function(data) {
-               $('body').html(data);
-           });
-       }
-
-       $(function() {
-
-    $('#hotday').click(function(e) {
-        $("#hotbook-list").fadeOut(100);
-		$("#hotbook-list").delay(100).fadeIn(100);
-		$('#hotmonth').removeClass('active');
-        $('#hotalltime').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-        $.get('ajax-hotlist?date=day', function(data){
-            $('#hotbook-list').html(data);
-        });
-	});
-    $('#hotmonth').click(function(e) {
-        $("#hotbook-list").fadeOut(100);
-		$("#hotbook-list").delay(100).fadeIn(100);
-		$('#hotday').removeClass('active');
-        $('#hotalltime').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-        $.get('ajax-hotlist?date=month', function(data){
-            $('#hotbook-list').html(data);
-        });
-	});
-    $('#hotalltime').click(function(e) {
-        $("#hotbook-list").fadeOut(100);
-		$("#hotbook-list").delay(100).fadeIn(100);
-		$('#hotmonth').removeClass('active');
-        $('#hotday').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-        $.get('ajax-hotlist?date=all', function(data){
-            $('#hotbook-list').html(data);
-        });
-	});
-
-});
->>>>>>> 2ea8eff87006574e05bc7c5ecea0c87a33f8a5c3
   </script>
 @endsection
 

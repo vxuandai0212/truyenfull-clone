@@ -26,9 +26,9 @@
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Hiện menu</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                    <h1><a class="header-logo" href="{{route('home')}}" title="doc truyen">doc truyen</a></h1></div>
+                    <h1><a class="header-logo" href="http://truyenfull.vn/" title="doc truyen">doc truyen</a></h1></div>
                 <div class="navbar-collapse collapse" itemscope itemtype="http://schema.org/WebSite">
-                    <meta itemprop="url" content="" />
+                    <meta itemprop="url" content="http://truyenfull.vn" />
                     @include('guestLayouts.navBar')
                     @include('guestLayouts.searchBar')
                     <div id="login-status" class="hide"></div>
